@@ -72,8 +72,6 @@ Controller → Service → Repository → Database
 ↓
 View (Thymeleaf + Tailwind)
 
-yaml
-Copy code
 
 This ensures clean separation of concerns and scalability.
 
@@ -88,20 +86,14 @@ cd Smart-Contact-Manager
 2️⃣ Database Configuration
 Create a MySQL database:
 
-sql
-Copy code
 CREATE DATABASE scm;
 Update application.properties:
 
-properties
-Copy code
 spring.datasource.url=jdbc:mysql://localhost:3306/scm
 spring.datasource.username=YOUR_DB_USERNAME
 spring.datasource.password=YOUR_DB_PASSWORD
 
 3️⃣ Email (SMTP) Configuration
-properties
-Copy code
 spring.mail.host=smtp.gmail.com
 spring.mail.port=587
 spring.mail.username=YOUR_EMAIL
@@ -110,38 +102,26 @@ spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 
 4️⃣ OAuth2 Configuration (Google / GitHub)
-properties
-Copy code
 spring.security.oauth2.client.registration.google.client-id=YOUR_CLIENT_ID
 spring.security.oauth2.client.registration.google.client-secret=YOUR_CLIENT_SECRET
 (Similar configuration for GitHub OAuth)
 
 5️⃣ Cloudinary / AWS S3 Configuration
-properties
-Copy code
 cloudinary.cloud-name=YOUR_CLOUD_NAME
 cloudinary.api-key=YOUR_API_KEY
 cloudinary.api-secret=YOUR_API_SECRET
 
 6️⃣ Tailwind CSS Setup
-bash
-Copy code
 npm install
 npm run build
 
 7️⃣ Run the Application
-bash
-Copy code
 mvn spring-boot:run
 Open in browser:
 
-arduino
-Copy code
 http://localhost:8080
 
 📂 Project Structure
-css
-Copy code
 scm/
  ├── src/main/java
  │   ├── controller
