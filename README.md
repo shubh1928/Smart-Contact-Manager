@@ -1,6 +1,6 @@
-# 📇 Smart Contact Manager 2.0
+# 📇 Smart Contact Manager
 
-Smart Contact Manager 2.0 is a secure, cloud-enabled contact management application built using **Spring Boot**, **Spring Security**, **OAuth2**, **MySQL**, and **Tailwind CSS**.  
+Smart Contact Manager is a secure, cloud-enabled contact management application built using **Spring Boot**, **Spring Security**, **OAuth2**, **MySQL**, and **Tailwind CSS**.  
 It allows users to manage their personal contacts safely with modern authentication, responsive UI, and scalable architecture.
 
 ---
@@ -158,24 +158,16 @@ scm/
 
 🔒 Security Highlights
 Encrypted passwords using BCrypt
-
 Secure session handling
-
 User-specific data isolation
-
 OAuth2-based authentication
 
 📈 Why This Project Matters
 This project demonstrates:
-
 Real-world Spring Boot application development
-
 Secure authentication & authorization
-
 Third-party API integrations
-
 Optimized database handling using pagination
-
 Clean and maintainable code structure
 
 🧑‍💻 Author
@@ -187,18 +179,13 @@ GitHub: https://github.com/shubh1928
 If you like this project:
 
 ⭐ Star the repository
-
 🍴 Fork it
-
 📢 Share it on LinkedIn
 
 📌 Future Enhancements
 REST API version
-
 Angular / React frontend
-
 Role-based access control
-
 Docker deployment
 
 📄 License
