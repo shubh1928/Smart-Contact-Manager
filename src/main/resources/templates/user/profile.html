@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-th-replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+	<title data-th-text="${loggedInUser.name}+' | SCM'">Profile</title>
+</head>
+	<body>
+	
+		<div id="content">
+		
+			<!-- sidebar if user is logged in -->
+			<div data-th-if="${loggedInUser}">
+				<div data-th-replace="~{user/sidebar::sidebar}"></div>
+			</div>
+	
+			<div class="sm:pl-64 pt-20 flex justify-center flex-col items-center">
+			
+				<!-- Profile Card -->
+				<div class="max-w-2xl mx-auto bg-white dark:bg-gray-800 shadow-xl rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-600 hover:shadow-2xl transition-all duration-300">
+    
+				    <!-- Profile Section -->
+				    <div class="flex flex-col items-center p-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+				        <img data-th-src="${loggedInUser.profilePic != null ? loggedInUser.profilePic : 'https://via.placeholder.com/150'}"
+				             alt="Profile"
+				             class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover"/>
+				        <h2 class="mt-4 text-2xl text-black dark:text-white font-semibold" data-th-text="${loggedInUser.name}">User Name</h2>
+				        <p class="text-sm text-black dark:text-white opacity-80" data-th-text="${loggedInUser.email}"></p>
+				    </div>
+				
+				    <!-- Info Section -->
+				    <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-800 dark:text-gray-200">
+				        
+				        <!-- User ID -->
+				        <div>
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">User ID</h3>
+				            <p class="text-base" data-th-text="${loggedInUser.userId}"></p>
+				        </div>
+				
+				        <!-- Name -->
+				        <div>
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Full Name</h3>
+				            <p class="text-base" data-th-text="${loggedInUser.name}"></p>
+				        </div>
+				
+				        <!-- Phone -->
+				        <div>
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Phone Number</h3>
+				            <p class="text-base" data-th-text="${loggedInUser.phoneNumber != null ? loggedInUser.phoneNumber : 'Not Provided'}"></p>
+				            
+				            <!-- Phone Verified Badge -->
+				            <span data-th-if="${loggedInUser.phoneVerified}" 
+				                  class="inline-block mt-1 px-2 py-0.5 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+				                ✅ Verified
+				            </span>
+				            <span data-th-if="${!loggedInUser.phoneVerified}" 
+				                  class="inline-block mt-1 px-2 py-0.5 text-xs font-medium text-red-700 bg-red-100 rounded-full">
+				                ❌ Not Verified
+				            </span>
+				        </div>
+				
+				        <!-- Email -->
+				        <div>
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Email Address</h3>
+				            <p class="text-base break-words" data-th-text="${loggedInUser.email}"></p>
+				            
+				            <!-- Email Verified Badge -->
+				            <span data-th-if="${loggedInUser.emailVerified}" 
+				                  class="inline-block mt-1 px-2 py-0.5 text-xs font-medium text-green-700 bg-green-100 rounded-full">
+				                ✅ Verified
+				            </span>
+				            <span data-th-if="${!loggedInUser.emailVerified}" 
+				                  class="inline-block mt-1 px-2 py-0.5 text-xs font-medium text-red-700 bg-red-100 rounded-full">
+				                ❌ Not Verified
+				            </span>
+				        </div>
+				
+				        <!-- About (full width) -->
+				        <div class="md:col-span-2">
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">About</h3>
+				            <p class="text-base" data-th-text="${loggedInUser.about != null ? loggedInUser.about : 'No information provided.'}">
+				            </p>
+				        </div>
+				
+				        <!-- Provider Info -->
+				        <div>
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Provider</h3>
+				            <p class="text-base" data-th-text="${loggedInUser.provider}"></p>
+				        </div>
+				
+				        <div data-th-if="${loggedInUser.providerUserId != null}">
+				            <h3 class="text-sm font-semibold text-gray-500 dark:text-gray-400">Provider User ID</h3>
+				            <p class="text-base" data-th-text="${loggedInUser.providerUserId}"></p>
+				        </div>
+				    </div>
+				</div>
+											
+			</div>
+		
+		</div>
+		
+		<script type="text/javascript">
+			console.log("Profile Page");
+		</script>
+	</body>
+</html>

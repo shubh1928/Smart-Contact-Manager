@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="light" lang="en" data-th-fragment="parent(content,title,script)"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-th-replace="${title}">Smart Contact Manager</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+	integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" data-th-href="@{'/css/output.css'}" />
+<link rel="stylesheet" data-th-href="@{'/css/style.css'}" media="all" />
+</head>
+<body class="bg-white bg-gray-100 text-black dark:bg-gray-900 dark:text-white">
+
+	<!-- common header -->
+	
+	<!-- navbar if user is logged in -->
+	<div data-th-if="${loggedInUser}">
+		<div data-th-replace="~{user/user_navbar::user-navbar}"></div>
+	</div>
+	
+	<!-- navbar if user is not logged -->
+	<div data-th-unless="${loggedInUser}">
+		<div data-th-replace="~{navbar::navbar}"></div>
+	</div>
+
+	<!-- Main Content -->
+	<div class="p-4">
+		<section data-th-replace="${content}"></section>
+	</div>
+
+	<!-- common footer -->
+	<!-- <footer class="p-4"> Footer : Learning to code... </footer> -->
+
+	<!-- Sweet Alert CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	
+	<script
+		src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+	<script data-th-src="@{'/js/script.js'}" type="text/javascript"></script>
+	<th:block data-th-replace="${script}"></th:block>
+</body>
+</html>

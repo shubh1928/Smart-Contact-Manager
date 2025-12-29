@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+  <title>About</title>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+
+  <div id="content">
+    <div class="border">
+
+      <!-- Banner Section -->
+      <section class="bg-blue-600 text-white py-20 animate__animated animate__fadeInDown">
+        <div class="container mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-4">About Contact Manager</h2>
+          <p class="text-lg mb-8 max-w-2xl mx-auto">
+            Contact Manager is your one-stop solution to securely manage, organize, and access all your contacts anywhere, anytime.
+          </p>
+        </div>
+      </section>
+
+      <!-- Our Story Section -->
+      <section class="py-20 bg-white dark:bg-gray-800 transition-colors duration-300">
+        <div class="container mx-auto text-center max-w-4xl">
+          <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+          <p class="text-gray-600 dark:text-gray-300 mb-6">
+            Founded with a mission to simplify contact management, Contact Manager was built to help individuals and businesses
+            securely store and manage their connections. Our platform ensures your data is safe, easy to access, and well-organized.
+          </p>
+          <p class="text-gray-600 dark:text-gray-300">
+            From students to professionals, our app adapts to your needs, making contact management effortless and reliable.
+          </p>
+        </div>
+      </section>
+
+      <!-- Mission and Vision -->
+      <section class="py-20 bg-gray-100 dark:bg-gray-700 transition-colors duration-300">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 text-center md:text-left">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              To provide a simple, secure, and reliable contact management solution that empowers individuals and businesses to
+              stay connected and organized without worries about data loss or security risks.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold mb-4">Our Vision</h3>
+            <p class="text-gray-600 dark:text-gray-300">
+              To become the world’s most trusted contact management platform by continuously innovating, prioritizing user privacy,
+              and enhancing accessibility across devices.
+            </p>
+          </div>
+        </div>
+      </section>
+
+  <!-- Team Section -->
+  <section class="bg-gray-100 dark:bg-gray-800 py-12">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">Our Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+        <!-- Shubham Gopale -->
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Shubham" class="w-20 h-20 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">Shubham Gopale</h3>
+          <p class="text-gray-600 dark:text-gray-300">Founder & Developer</p>
+        </div>
+
+        <!-- YouTube -->
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" class="w-20 h-20 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">YouTube</h3>
+          <p class="text-gray-600 dark:text-gray-300">Learning Partner</p>
+        </div>
+
+        <!-- ChatGPT -->
+        <div class="p-6 bg-white dark:bg-gray-700 rounded-xl shadow-lg">
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="ChatGPT" class="w-20 h-20 mx-auto rounded-full mb-4">
+          <h3 class="text-xl font-semibold">ChatGPT</h3>
+          <p class="text-gray-600 dark:text-gray-300">AI Assistant</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+      <!-- Footer Section -->
+	  <div data-th-replace="footer :: site-footer"></div>
+
+  <script type="text/javascript">
+    console.log("About Page");
+  </script>
+</body>
+</html>
